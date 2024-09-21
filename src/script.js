@@ -1,35 +1,5 @@
 const shop = document.getElementById('shop')
 
-let shopItemsData = [
-    {
-        id: "jfhgbvnscs",
-        name: "Casual Shirt",
-        price: 45,
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-        img: "images/img-1.jpg",
-    },
-    {
-        id: "ioytrhndcv",
-        name: "Office Shirt",
-        price: 100,
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-        img: "images/img-2.jpg",
-    },
-    {
-        id: "wuefbncxbsn",
-        name: "T Shirt",
-        price: 25,
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-        img: "images/img-3.jpg",
-    },
-    {
-        id: "thyfhcbcv",
-        name: "Mens Suit",
-        price: 300,
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-        img: "images/img-4.jpg",
-    }
-]
 
 let basket = JSON.parse(localStorage.getItem("data")) || []
 
@@ -71,24 +41,25 @@ const increment = (id) => {
     }else {
         search.item += 1
     }
-    localStorage.setItem('data', JSON.stringify(basket))
-
+    
     update(selectedItem.id)
+    localStorage.setItem('data', JSON.stringify(basket))
 }
 
 const decrement = (id) => {
     let selectedItem = id
     let search = basket.find((basketItem) => basketItem.id === selectedItem.id)
     
-    if(search.item === 0) return
+    if (search === undefined) return
+
+    else if(search.item === 0) return
     else {
         search.item -= 1
     }
     // console.log(basket)
-
-    localStorage.setItem('data', JSON.stringify(basket))
-
     update(selectedItem.id)
+    basket = basket.filter((x) => x.item !== 0)
+    localStorage.setItem('data', JSON.stringify(basket))
 } 
 
 const update = (id) => {

@@ -95,3 +95,80 @@ body {
     color: green;
     cursor: pointer;
 }
+
+i {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.text-center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.homeBtn, .checkout, .removeAll {
+    background: #212529;
+    color: white;
+    border: none;
+    padding: 6px;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.checkout {
+    background: green;
+}
+
+.removeAll {
+    background: red;
+}
+
+.bi-x-lg {
+    color: red;
+    font-weight: bold;
+}
+
+
+.shopping-cart {
+    display: grid;
+    grid-template-columns: repeat(1, 320px);
+    justify-content: center;
+    gap: 15px;
+
+}
+
+.cart-item {
+    border: 2px solid black ;
+    border-radius: 5px;
+    display: flex;
+}
+
+.details {
+    padding: 10px;
+    width: 100%;
+}
+ 
+.title-price-x {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item-price {
+    background-color: #212529;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 6px;
+}
